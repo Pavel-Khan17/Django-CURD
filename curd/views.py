@@ -40,3 +40,14 @@ def updateStudent(request,pk):
     form = studentModelForm(instance=student)
   context = {'form' : form}
   return render(request, "add_student.html", context)  
+
+# delete operation 
+""" delete the student info from database """
+
+def deleteStudent(request,pk):
+  student = get_object_or_404(studentModel, id=pk)
+  if request.method == 'POST':
+    student.delete()
+    return redirect('home')
+  context={'student': student}
+  return render(request, "delete.html", context)
