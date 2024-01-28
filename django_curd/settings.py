@@ -48,6 +48,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Other middleware classes...
+    'curd.middleware.URLFilterMiddleware',
 ]
 
 ROOT_URLCONF = 'django_curd.urls'

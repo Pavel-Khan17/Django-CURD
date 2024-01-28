@@ -1,20 +1,19 @@
 from django import forms
 from django.core.exceptions import ValidationError
-from .models import studentModel
+from .models import studentModel ,departmentModel
 
 
-      
 class studentModelForm(forms.ModelForm):
-  name = forms.CharField(max_length=20, required=False)
-  email = forms.CharField( max_length=50 ,error_messages={'unique': "this email is already taken."})
+  name = forms.CharField(max_length=50, required=False)
+  email = forms.EmailField( max_length=50 ,error_messages={'unique': "this email is already taken."})
+
   class Meta:
     model = studentModel
     fields = '__all__'
     
   def clean_name(self): 
     return self.cleaned_data['name'].capitalize() 
-  
-  
+
   def __init__(self, *args, **kwargs):
     super(studentModelForm, self).__init__(*args, **kwargs)
     for field in self.fields:

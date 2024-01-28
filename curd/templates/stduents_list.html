@@ -11,14 +11,7 @@
   <td class="p-4 border-b border-blue-gray-50">
     <img
       class="object-cover object-center rounded-full h-10 w-10"
-      {%
-      if
-      student.profile
-      %}
-      src="{{student.profile.url}}"
-      {%
-      endif
-      %}
+        {% if student.profile %} src="{{student.profile.url}}" {% endif %}
       alt="{{student.name}}"
       title="{{student.name}}"
     />

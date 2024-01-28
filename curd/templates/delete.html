@@ -3,20 +3,15 @@
   class="fixed inset-0 z-[999] grid h-screen w-screen place-items-center bg-black bg-opacity-60 backdrop-blur-sm"
 >
   <div
-    class="max-w-screen-lg m-auto w-80 relative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-96 mt-20 bg-black bg-opacity-60"
+    class="max-w-screen-lg m-autorelative flex flex-col text-gray-700 bg-white shadow-md bg-clip-border rounded-xl w-80 bg-black bg-opacity-60"
   >
     <div
-      class="relative mx-4 mt-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-70"
+      class="relative m-4 overflow-hidden text-gray-700 bg-white shadow-lg bg-clip-border rounded-xl h-70"
     >
       <img
-        {%
-        if
-        student.profile
-        %}
-        src="{{student.profile.url}}"
-        {%
-        endif
-        %}
+          {% if student.profile %}
+            src="{{student.profile.url}}"
+          {% endif %}
         alt="{{student.name}}"
         title="{{student.name}}"
         class="m-auto"
@@ -48,7 +43,7 @@
         type="submit"
         form="delete_student"
       >
-        Confirm
+        Delete
       </button>
       <a
         class="px-6 py-3 mr-1 font-sans text-xs font-bold text-red-500 uppercase transition-all rounded-lg middle none center hover:bg-red-500/10 active:bg-red-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"

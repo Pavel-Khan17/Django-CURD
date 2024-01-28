@@ -7,4 +7,6 @@ class studentModelAdmin(admin.ModelAdmin):
   list_display = ['id', 'name', 'email']
 
 
-admin.site.register(departmentModel)
+@admin.register(departmentModel)
+class departmentModelAdmin(admin.ModelAdmin):
+  list_display = ['id', 'name']
